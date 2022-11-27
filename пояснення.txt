@@ -1,0 +1,32 @@
+<!-- grid-template minmax100px, auto 1fr minmax70px, auto / 1fr; перше значення наша шапка, друге що контент займеє всю площу і прибиває футер до низу, третє значення наш футер висота і ширин авто -->
+
+-header {
+	grid-area: header;
+	background-color: #794F58;
+	display: grid;
+	padding: 15px;
+	grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+
+пояснення grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+1 значення 1fr/ е те що в нас один ряд в ширину який займає всю площу, далі те що в нас 4 коллонки 2 і 3 колонка займає мінімально ауто а максимально по 300 і 1100 пікселів, а перше і останнє значення що і колонки займають все інше місце.
+ 
+.header_logo {
+	width: 70px;
+	height: 70px;
+	border-radius: 50px;
+	background-color: #FFF;
+	grid-column: 2 / 3;
+
+пояснення grid-column: 2 / 3; е те що ми розписували 4 колонки 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+означає що починається наш логотип з 2 колонки і закінчується третьою. minmax(auto, 300px)
+
+вийшло те що зліва і з права у нас простір, а посередині лого і меню в 2х контейнерах.
+те що ми писали minmax(auto, 300px) minmax(auto, 1100px) означає що ми обмежили наш контент
+на 1400 пікселів загалом.
+
+.produkt_item {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template: auto 1fr minmax(40px, auto) / 1fr;
+
+фотка автоматичного розміру напис 1фр і кнопка 40пк ауто
